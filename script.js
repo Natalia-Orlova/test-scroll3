@@ -4,9 +4,8 @@ const container = document.getElementById("videoContainer");
 
 // set the container height according to video length
 video.addEventListener('loadedmetadata', function() {
-  const speed = 350; // can be any number (adjust to your preference)
+  const speed = 600; // can be any number (adjust to your preference)
   container.style.height = (video.duration * speed) + 'px';
-  console.log(video.duration * speed);
 });
 
 // play video using scroll values
@@ -17,6 +16,7 @@ const playVideo = () => {
   var scrollY = window.scrollY;
   // get total page height and calculate percentage
   var height = document.documentElement.scrollHeight - window.innerHeight;
+  console.log(height);
   var percentage = (scrollY / height);
   // set video playback position.
   video.currentTime = video.duration * percentage;
