@@ -1,5 +1,5 @@
 let imgsLen = 200,
-  imgsPath = "/imgs/",
+  imgsPath = "imgs/",
   el = document.querySelector("#scroll-model"),
   content = document.querySelector(".content"),
   imgs = false,
@@ -36,8 +36,6 @@ function RotateScroll() {
       // Замедляем смену изображений, используя логарифмическую функцию
       let scrollPercentage = window.scrollY / window.innerHeight;
       let i = Math.floor(Math.log(1 + scrollPercentage) * (imgsLen / Math.log(10)));
-
-      console.log(i);
 
       // Убеждаемся, что i находится в пределах допустимых индексов
       i = Math.max(0, Math.min(i, imgsLen - 1));
